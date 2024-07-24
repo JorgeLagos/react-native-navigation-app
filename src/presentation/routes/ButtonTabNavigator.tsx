@@ -4,6 +4,9 @@ import { Tab2Screen } from '../screen/tabs/Tab2Screen';
 import { Tab3Screen } from '../screen/tabs/Tab3Screen';
 import { globalColors } from '../theme/theme';
 import { Text } from 'react-native';
+import { MaterialTopTabNavigator } from './MaterialTopTabNavigator';
+import { StackNavigator } from './StackNavigator';
+import { Icons } from '../components/shared/Icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -14,6 +17,7 @@ export const ButtonTabNavigator = () => {
         backgroundColor: globalColors.background
       }}
       screenOptions={{
+        tabBarActiveTintColor: globalColors.primary,
         tabBarLabelStyle: {
           marginBottom: 5,
         },
@@ -27,9 +31,9 @@ export const ButtonTabNavigator = () => {
           borderTopWidth: 0,
         },
       }}>
-      <Tab.Screen name="Tab1" options={{ title: 'Tab1', tabBarIcon: ({ color }) => (<Text style={{ color }}>Tab1</Text>) }} component={ Tab1Screen } />
-      <Tab.Screen name="Tab2" options={{ title: 'Tab2', tabBarIcon: ({ color }) => (<Text style={{ color }}>Tab2</Text>) }} component={ Tab2Screen } />
-      <Tab.Screen name="Tab3" options={{ title: 'Tab3', tabBarIcon: ({ color }) => (<Text style={{ color }}>Tab3</Text>) }} component={ Tab3Screen } />
+      <Tab.Screen name="Tab1" options={{ title: "Barcode", tabBarIcon: ({ color }) => (<Icons name="qr-code-outline" color={ color } />) }} component={ Tab1Screen } />
+      <Tab.Screen name="Tab2" options={{ title: "Key", tabBarIcon: ({ color }) => (<Icons name="key-outline" color={ color } />) }} component={ MaterialTopTabNavigator } />
+      <Tab.Screen name="Tab3" options={{ title: "Rocketbot", tabBarIcon: ({ color }) => (<Icons name="rocket-outline" color={ color } />) }} component={ StackNavigator } />
     </Tab.Navigator>
   );
 }

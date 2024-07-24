@@ -6,6 +6,7 @@ import { ButtonTabNavigator } from './ButtonTabNavigator';
 
 import { ProfileScreen } from '../screen/profile/ProfileScreen';
 import { globalColors } from '../theme/theme';
+import { Icons } from '../components/shared/Icons';
 
 const Drawer = createDrawerNavigator();
 
@@ -27,8 +28,8 @@ export const DrawerNavigator = () => {
           paddingHorizontal: 20,
         },
       }}>
-      <Drawer.Screen name="Tabs" component={ ButtonTabNavigator } />
-      <Drawer.Screen name="Profile" component={ ProfileScreen } />
+      <Drawer.Screen name="Tabs" options={{ drawerIcon: ({ color }) => (<Icons name="apps-outline" color={ color } />) }} component={ ButtonTabNavigator } />
+      <Drawer.Screen name="Profile" options={{ drawerIcon: ({ color }) => (<Icons name="person-outline" color={ color } />) }} component={ ProfileScreen } />
     </Drawer.Navigator>
   );
 }
