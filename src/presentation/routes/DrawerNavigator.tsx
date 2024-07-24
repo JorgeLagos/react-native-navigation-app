@@ -2,6 +2,8 @@ import { useWindowDimensions, View } from 'react-native';
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 
 import { StackNavigator } from './StackNavigator';
+import { ButtonTabNavigator } from './ButtonTabNavigator';
+
 import { ProfileScreen } from '../screen/profile/ProfileScreen';
 import { globalColors } from '../theme/theme';
 
@@ -25,7 +27,7 @@ export const DrawerNavigator = () => {
           paddingHorizontal: 20,
         },
       }}>
-      <Drawer.Screen name="StackNavigator" component={ StackNavigator } />
+      <Drawer.Screen name="Tabs" component={ ButtonTabNavigator } />
       <Drawer.Screen name="Profile" component={ ProfileScreen } />
     </Drawer.Navigator>
   );
